@@ -155,6 +155,15 @@ app.patch('/api/jobs/:id/status', authenticate, (req, res) => {
   });
 });
 
+// Serve compiled frontend static files if they exist
+const frontendPath = path.join(__dirname, '../dist');
+if (fs.existsSync(frontendPath)) {
+  app.use(express.static(frontendPath));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Backend server running on http://localhost:${PORT}`);
 });

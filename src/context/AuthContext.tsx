@@ -1,8 +1,8 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
 
-// Using the local backend
-const API_URL = 'http://localhost:3001/api';
+// Using the local backend proxy
+const API_URL = '/api';
 
 interface User {
   id: string | number;

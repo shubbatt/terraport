@@ -55,7 +55,7 @@ const UploadDocuments = () => {
         formData.append('document', file);
         formData.append('serviceType', 'Customs Clearance');
         
-        const res = await fetch('http://localhost:3001/api/upload', {
+        const res = await fetch('/api/upload', {
           method: 'POST',
           headers: {
             'Authorization': "Bearer " + token

@@ -60,7 +60,7 @@ const Dashboard = () => {
 
   const fetchJobs = async () => {
     try {
-      const res = await fetch('http://localhost:3001/api/jobs', {
+      const res = await fetch('/api/jobs', {
         headers: { Authorization: "Bearer " + token }
       });
       if (res.ok) {
@@ -80,7 +80,7 @@ const Dashboard = () => {
 
   const updateStatus = async (id: number, status: string) => {
     try {
-      const res = await fetch("http://localhost:3001/api/jobs/" + id + "/status", {
+      const res = await fetch("/api/jobs/" + id + "/status", {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
