@@ -1,5 +1,5 @@
 # Build the frontend Vite React app
-FROM node:18 AS frontend
+FROM node:22 AS frontend
 WORKDIR /app
 
 # Copy root package.json for frontend
@@ -11,7 +11,7 @@ COPY . .
 RUN npm run build
 
 # Setup the backend Express server
-FROM node:18
+FROM node:22
 WORKDIR /app
 
 # Copy server dependencies
